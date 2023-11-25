@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://yoursite.com/2023/11/19/分布式文件服务/"/>
+  <link rel="canonical" href="http://yoursite.com/2023/11/25/nacos完成服务注册与发现/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -35,20 +35,22 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>myblog</title>
-  <meta name="keywords" content="null">
+  <title>Nacos完成服务注册与发现 - myblog</title>
+  <meta name="keywords" content="微服务,nacos,null">
   <meta desc name="description" content="test description - John Doe - myblog">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="myblog">
-<meta property="og:url" content="http://yoursite.com/2023/11/19/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:title" content="Nacos完成服务注册与发现">
+<meta property="og:url" content="http://yoursite.com/2023/11/25/Nacos%E5%AE%8C%E6%88%90%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="分布式文件服务 安装 fastDFS 的docker 容器，在容器测试上传，测试远程访问。     12345678910111213141516171819201) tracker 安装        			容器名			加入到ycnetwork 网络 docker run -d --name tracker --network&#x3D;ycnetwork -v 		将那个本地目录挂载到linux中">
+<meta property="og:description" content="服务注册与发现的实现常见产品区分：  CAP理论：一个分布式系统最多只能同时满足一致性（Consistency）、可用性（Availability）和分区容错性中的两项  可用性是指每个请求(成功与否)都能得到响应，不会出现错误或超时，即服务的可靠性和响应性得到保证 一致性是指所有结点在同一时间看到的数据是相同的，即数据的正确性和一致性得到保证 分区容错性是指网络发生故障或延迟时，系统仍然能够继续">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-11-19T15:52:43.140Z">
-<meta property="article:modified_time" content="2023-11-17T09:09:04.614Z">
+<meta property="article:published_time" content="2023-11-25T09:06:09.000Z">
+<meta property="article:modified_time" content="2023-11-25T09:14:40.580Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="微服务">
+<meta property="article:tag" content="nacos">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2152,7 +2154,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2521,7 +2523,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/11/19/分布式文件服务/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/11/25/Nacos完成服务注册与发现/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="myblog">
   </span>
@@ -2541,101 +2543,186 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-      <span hidden itemprop="name headline">
+      <h1 class="title" itemprop="name headline">
+        Nacos完成服务注册与发现
+      </h1>
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://github.com/ChenRong-HN" rel="nofollow noopener">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">ChenRong</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  
+  
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">知识点总结</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">学习笔记</span></a>
       </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" itemprop="url"><span itemprop="name">知识点总结</span></a>
+      </span>
+    
+  </div>
+  
+
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-11-25T17:06:09+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Nov 25, 2023</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
 
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="分布式文件服务"><a href="#分布式文件服务" class="headerlink" title="分布式文件服务"></a>分布式文件服务</h2><ol>
-<li>安装 fastDFS 的docker 容器，在容器测试上传，测试远程访问。</li>
-</ol>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1) tracker 安装</span><br><span class="line">        			容器名			加入到ycnetwork 网络 </span><br><span class="line">docker run -d --name tracker --network=ycnetwork -v </span><br><span class="line">		将那个本地目录挂载到linux中 									镜像名			容器名</span><br><span class="line">C:\Users\28894\Documents\dockercontainer\fastdfs\tracker:/var/fdfs delron/fastdfs tracker</span><br><span class="line">以上成功后 ycnetwork给tracker容器分配了 172.18.0.2</span><br><span class="line"></span><br><span class="line">2) storage 安装：实际上安装了两个组件  storage + nginx（http服务器）（保证 storage的磁盘大小 至少有空闲空间  10%）</span><br><span class="line">                将本机的8888映射到nginx端口8888  加入到ycnetwork网络    storage将信息提交给哪个tracker</span><br><span class="line">docker run -d  -p 8888:8888 --name storage --network=ycnetwork  -e TRACKER_SERVER=172.18.0.3:22122    -v</span><br><span class="line">	将那个本地目录挂载到linux中												分组</span><br><span class="line">C:\Users\28894\Documents\dockercontainer\fastdfs\storage:/var/fdfs   -e GROUP_NAME=group1 delron/fastdfs storage</span><br><span class="line"></span><br><span class="line">在storage容器中测试使用命令上传图片</span><br><span class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf 500008.jpg</span><br><span class="line">测试成功后，图片保存的位置：group1/M00/00/00/rBIABWVPZ9KAV3sxAABGbuqCV2g604.jpg</span><br><span class="line">在浏览器中通过：http://localhost:8888/group1/M00/00/00/rBIABWVPZ9KAV3sxAABGbuqCV2g604.jpg访问到图片，则成功</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>编写小萌神后台</p>
-<p> FormData对象和URLSearchParams 对象：</p>
+    <h3 id="服务注册与发现的实现"><a href="#服务注册与发现的实现" class="headerlink" title="服务注册与发现的实现"></a>服务注册与发现的实现</h3><p>常见产品区分：</p>
+<p><img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231121183757424.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231121183757424.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231121183757424"></p>
+<p>CAP理论：一个分布式系统最多只能同时满足一致性（Consistency）、可用性（Availability）和分区容错性中的两项</p>
+<ul>
+<li>可用性是指每个请求(成功与否)都能得到响应，不会出现错误或超时，即服务的可靠性和响应性得到保证</li>
+<li>一致性是指所有结点在同一时间看到的数据是相同的，即数据的正确性和一致性得到保证</li>
+<li>分区容错性是指网络发生故障或延迟时，系统仍然能够继续运行，不会挂掉，即系统的稳定性和容错性得到保证</li>
+</ul>
+<p>CP：满足一致性和分区容忍性，牺牲可用性。当网络分区发生时，系统只保留一个分区继续提供服务，其他分区不可用，直到网络恢复正常。</p>
+<blockquote>
+<p>ZooKeeper, HBase, MongoDB, Redis（集群模式）等。这些系统通常用于需要强一致性的场景，如协调、锁服务、元数据管理等</p>
+</blockquote>
+<p>AP：满足可用性和分区容忍性，牺牲一致性。当网络分区发生时，系统保持所有分区都可用，但可能返回过期的数据，直到数据同步完成。</p>
+<blockquote>
+<p>Eureka, Cassandra, CouchDB, DynamoDB, Riak, Redis（哨兵模式）等。这些系统通常用于需要高可用性和可扩展性的场景，如缓存、消息队列、文档存储等</p>
+</blockquote>
+<p>Nacos是一个动态服务发现、配置管理和服务管理平台，它支持两种分布式一致性模式：AP（分区可用性）和CP（分区一致性）：</p>
+<ul>
+<li><p>AP模式是指Nacos使用自研的Distro协议来保证服务注册和发现的可用性和最终一致性，适用于临时服务节点的场景，例如Spring Cloud微服务。在AP模式下，Nacos可以容忍网络分区故障，但可能会出现数据不一致的情况。</p>
+</li>
+<li><p>CP模式是指Nacos使用JRaft协议来保证服务注册和发现的强一致性，适用于持久化服务节点的场景，例如Dubbo微服务。在CP模式下，Nacos可以保证数据一致性，但可能会出现服务不可用的情况。</p>
+</li>
+</ul>
+<p>Nacos可以根据配置或者服务节点的状态来识别为AP模式或CP模式，默认是AP模式。如果注册Nacos的client节点注册时ephemeral&#x3D;true，那么Nacos集群对这个client节点的效果就是AP，采用distro协议实现；而注册Nacos的client节点注册时ephemeral&#x3D;false，那么Nacos集群对这个client节点的效果就是CP，采用raft协议实现。</p>
+<h3 id="nacos各种服务的工作流程"><a href="#nacos各种服务的工作流程" class="headerlink" title="nacos各种服务的工作流程"></a>nacos各种服务的工作流程</h3><p>配置管理：</p>
+<ul>
+<li><p>应用或服务可以向Nacos服务器发布或获取配置信息，如应用参数、路由规则、灰度策略等。Nacos服务器会保存配置信息到内存或数据库中，并根据长轮询的方式推送配置变更通知。</p>
+</li>
+<li><p>发布配置（命令模板）</p>
+<blockquote>
+<p>curl -X POST “<a target="_blank" rel="noopener" href="http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&group=test&content=HelloWorld">http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&amp;group=test&amp;content=HelloWorld</a>“</p>
+</blockquote>
+</li>
+<li><p>获取配置（命令模板）</p>
+<blockquote>
+<p>curl -X GET “<a target="_blank" rel="noopener" href="http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&group=test">http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&amp;group=test</a>“</p>
+</blockquote>
+</li>
+</ul>
+<p>DNS服务：</p>
+<ul>
+<li>应用或服务可以向Nacos服务器查询域名对应的IP列表，实现基于DNS协议的服务发现和负载均衡。Nacos服务器会根据权重路由等策略返回IP列表，并缓存DNS记录。</li>
+</ul>
+<p>元数据管理：</p>
+<ul>
+<li>应用或服务可以向Nacos服务器查询或更新元数据信息，如服务描述、生命周期、依赖关系、健康状态、流量管理等。Nacos服务器会提供可视化的仪表盘和API来管理元数据信息。</li>
+</ul>
+<p>服务注册发现（nacos&#x2F;eureka）:</p>
 <ol>
-<li>FormData 对象：<ul>
-<li>主要用于构造表单数据，特别是用于文件上传和包含二进制数据的请求。</li>
-<li>可以使用 <code>append()</code> 方法将键值对添加到 FormData 对象中。</li>
-<li>FormData 对象会自动设置适当的请求头部，以便在发送 AJAX 请求时进行正确的数据编码和格式化。</li>
-<li>可以通过将 FormData 对象传递给 Axios 的 <code>data</code> 属性来发送 Post 请求。</li>
-</ul>
-</li>
-<li>URLSearchParams对象：<ul>
-<li>用于构造 URL 查询参数，特别是在 GET 请求中传递参数。</li>
-<li>可以使用 <code>append()</code> 方法将键值对添加到 URLSearchParams 对象中。</li>
-<li>URLSearchParams 对象提供了一些方法（如 <code>toString()</code>）来处理 URL 查询参数的编码和格式化。</li>
-<li>可以将 URLSearchParams 对象传递给 Axios 的 <code>params</code> 属性来发送 GET 请求。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>导入fdfs依赖及相关配置</p>
+<li><p>服务注册</p>
+<p>Nacos Client会通过发送REST请求的方式向Nacos Server注册自己的服务，提供自身的元数据，比如IP地址、端口等信息。Nacos Server接收到注册请求后，就会把这些元元数据信息存储在一个双层的内测Map中。</p>
 <blockquote>
-<dependency>
-    <groupId>com.luhuiguo</groupId>
-    <artifactId>fastdfs-spring-boot-starter</artifactId>
-    <version>0.2.0</version>
-</dependency>
-</blockquote>
-<blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fdfs:</span><br><span class="line">  connect-timeout: 2000</span><br><span class="line">  so-timeout: 3000</span><br><span class="line">  tracker-list:</span><br><span class="line">    - 172.18.0.4:22122  #与tracker一致</span><br></pre></td></tr></table></figure>
+<p>curl -X POST ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=nacos.naming.serviceName&ip=20.18.7.10&port=8080">http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=nacos.naming.serviceName&amp;ip=20.18.7.10&amp;port=8080</a>‘</p>
 </blockquote>
 </li>
-<li><p>小萌神加入购物车数量异常原因(ResorderController.java)</p>
+<li><p>服务心跳（用于检测）</p>
+<p>在服务注册后，Nacos Client会维护一个定时心跳来持续通知Nacos Server，说明服务一直处于可用状态，防止被剔除。默认5s发送一次心跳。</p>
+</li>
+<li><p>服务同步  –&gt; 服务集群、CAP</p>
+<p>Nacos Server集群之间会互相同步服务实例，用来保证服务信息的一致性。</p>
 <blockquote>
-<p> 问题：购物车中最多只能存放两件菜品</p>
+<p>集群：防止单点故障</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从session中取出Cart</span></span><br><span class="line">Map&lt;Integer,CartItem&gt; cart = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">if</span> (session.getAttribute(<span class="string">&quot;cart&quot;</span>) != <span class="literal">null</span>)&#123;</span><br><span class="line">    cart = ((Map&lt;Integer, CartItem&gt;) session.getAttribute(<span class="string">&quot;cart&quot;</span>));</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    session.setAttribute(<span class="string">&quot;cart&quot;</span>,cart);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//判断改商品是否在map中  有 修改数量  无  创建一个CartItem，存入map中</span></span><br><span class="line">CartItem ci;</span><br><span class="line"><span class="keyword">if</span> (cart.containsKey(fid))&#123;</span><br><span class="line">     ci = cart.get(fid);</span><br><span class="line">    ci.setNum(ci.getNum()+num);</span><br><span class="line">    cart.put(fid,ci);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    ci = <span class="keyword">new</span> <span class="title class_">CartItem</span>();</span><br><span class="line">    ci.setNum(num);</span><br><span class="line">    ci.setFood(food);</span><br><span class="line">    cart.put(fid,ci);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//处理数量</span></span><br><span class="line"><span class="keyword">if</span> (ci.getNum() &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">    cart.remove(fid);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">session.setAttribute(<span class="string">&quot;cart&quot;</span>,cart);<span class="comment">//</span></span><br><span class="line">map.put(<span class="string">&quot;code&quot;</span>,<span class="number">1</span>);</span><br><span class="line">map.put(<span class="string">&quot;obj&quot;</span>,cart.values());</span><br><span class="line"><span class="keyword">return</span> map;</span><br></pre></td></tr></table></figure></li>
-</ol>
+</li>
+<li><p>服务发现</p>
+<p>服务消费者(Nacos Client)在调用服务提供者的服务时，会发送一个REST请求给NacosServer，获取上面注册的服务清单，并且缓存在Nacos Client本地，同时会在Nacos Client本地开启一个定时任务定时拉取服务端最新的注册表信息更新到本地缓存</p>
 <blockquote>
-<p>问题所在：第一次执行成功：购物车的session为null，走了else分支，成功地存放了一次数据。第二次由于session中已经存在数据，走了if分支，只在map中新增了数据并返回结果。第三次新增时，还是从session中取数据（一条数据），将新增的数据put到map中，此时返回的map中只有两条数据（第一次和第三次加入的）。</p>
+<p>curl -X GET ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8848/nacos/v1/ns/instance/list?serviceName=nacos.naming.serviceName">http://127.0.0.1:8848/nacos/v1/ns/instance/list?serviceName=nacos.naming.serviceName</a>‘</p>
 </blockquote>
-<blockquote>
-<p>原因：只有第一次的数据存到session中，后面加入购物车的数据以临时数据的形式暂时放在map中。最后造成最多两条数据的情况</p>
-<p>解决方法： 在每次处理完之后，将新的数据加到session中( &#x3D;&#x3D;session.setAttribute(“cart”,cart);&#x3D;&#x3D; )</p>
-</blockquote>
-<p>​		</p>
-<p><img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231112165941739.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231112165941739.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231112165941739"></p>
-<h2 id="spring-security"><a href="#spring-security" class="headerlink" title="spring security"></a>spring security</h2><p>1.token</p>
-<p>token是一种加密的字符串，包含了用户的身份和权限信息，服务器在验证用户登录后会颁发一个token给浏览器，浏览器可以选择保存位置，浏览器在每次请求时需要寿佛那个将token放在请求头中，服务器可以根据token来识别用户的身份和权限</p>
-<ol start="2">
-<li>JWT(JSON Web Token)</li>
-</ol>
-<blockquote>
-<p>分为三部分：头部，载荷，签名</p>
-</blockquote>
-<ul>
-<li>头部(Header)：包含了token的类型和签名算法，通常使用&#x3D;&#x3D;Base64Url编码&#x3D;&#x3D;</li>
-<li>载荷(Payload)：包含了一些声明（Claim），可以是用户的身份和权限信息，页可以是自定义的数据通常使用&#x3D;&#x3D;Base64Url编码&#x3D;&#x3D;</li>
-<li>签名(Signature)：使用头部和载荷以及一个密钥或者公钥&#x2F;私钥对，通过签名算法生成的字符串，用来保证token的完整性和不可伪造性</li>
-</ul>
-<blockquote>
-<p>算出签名以后，把 Header、Payload、Signature 三个部分拼成一个字符串，每个部分之间用”点”（.）分隔，就构成整个JWT对象TOKEN， 就可以返回给用户，形成一个类似于xxxxx.yyyyy.zzzzz的字符串</p>
-</blockquote>
-<p>JWT依赖：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.jsonwebtoken<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jjwt<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>0.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务健康检查</p>
+<p>Nacos Server会开启一个定时任务用来检查注册服务实例的健康情况，对于超过15s没有收到客户端心跳的实例会将它的healthy属性置为false(客户端服务发现时不会发现)，如果某个实例超过30秒没有收到心跳，直接剔除该实例(被剔除的实例如果恢复发送心跳则会重新注册)</p>
+<h3 id="Actuator（2-X-版本）"><a href="#Actuator（2-X-版本）" class="headerlink" title="Actuator（2.X 版本）"></a>Actuator（2.X 版本）</h3><p>spring boot Actuator模块提供了生产级别的功能，帮助我们监控和管理spring boot应用。这个模块是一个采集应用内部信息暴露给外部的模块，上述的功能都可以通过HTTP 和 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=JMX&spm=1001.2101.3001.7020">JMX</a> 访问。</p>
+<p>依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>jwt工具类JwtUtil.java ,实现生成和解析token，并配置好协议</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JwtUtil</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> EXPIRED_TOKEN=<span class="number">409</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> NO_TOKEN=<span class="number">410</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> INVALIDATE_TOKEN=<span class="number">411</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">long</span> <span class="variable">time</span> <span class="operator">=</span> <span class="number">1000</span>*<span class="number">500</span>;  <span class="comment">//*60*24;   // token 有效期为一天</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">signature</span> <span class="operator">=</span> <span class="string">&quot;admin&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成token ，三个参数是实体类的字段，可根据自身需求来传，一般只需要用户id即可</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">createJwtToken</span><span class="params">(String username, String role, String subject)</span>&#123;</span><br><span class="line">        <span class="type">JwtBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> Jwts.builder();</span><br><span class="line">        <span class="type">String</span> <span class="variable">jwtToken</span> <span class="operator">=</span> builder</span><br><span class="line">                <span class="comment">// header</span></span><br><span class="line">                .setHeaderParam(<span class="string">&quot;typ&quot;</span>,<span class="string">&quot;JWT&quot;</span>)</span><br><span class="line">                .setHeaderParam(<span class="string">&quot;alg&quot;</span>,<span class="string">&quot;HS256&quot;</span>)</span><br><span class="line">                <span class="comment">// payload 载荷</span></span><br><span class="line">                .claim(<span class="string">&quot;username&quot;</span>, username)</span><br><span class="line">                .claim(<span class="string">&quot;role&quot;</span>, role)</span><br><span class="line">                .claim(<span class="string">&quot;date&quot;</span>, <span class="keyword">new</span> <span class="title class_">Date</span>())</span><br><span class="line">                .setSubject(subject)</span><br><span class="line">                .setExpiration(<span class="keyword">new</span> <span class="title class_">Date</span>(System.currentTimeMillis() + time))</span><br><span class="line">                .setId(UUID.randomUUID().toString())</span><br><span class="line">                <span class="comment">// signature 签名信息</span></span><br><span class="line">                .signWith(SignatureAlgorithm.HS256, signature)</span><br><span class="line">                <span class="comment">// 用.拼接</span></span><br><span class="line">                .compact();</span><br><span class="line">        <span class="keyword">return</span> jwtToken;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 验证 token 是否还有效，返回具体内容</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Claims <span class="title function_">checkToken</span><span class="params">(String token)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (token == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">JwtParser</span> <span class="variable">parser</span> <span class="operator">=</span> Jwts.parser();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Jws&lt;Claims&gt; claimsJws = parser.setSigningKey(signature).parseClaimsJws(token);</span><br><span class="line">            <span class="type">Claims</span> <span class="variable">claims</span> <span class="operator">=</span> claimsJws.getBody();</span><br><span class="line"></span><br><span class="line">            log.info(claims.get(<span class="string">&quot;username&quot;</span>).toString());</span><br><span class="line">            log.info(claims.get(<span class="string">&quot;role&quot;</span>).toString());</span><br><span class="line">            log.info(claims.getId().toString());</span><br><span class="line">            log.info(claims.getSubject().toString()); <span class="comment">// 签名</span></span><br><span class="line">            log.info(claims.getExpiration().toString()); <span class="comment">// 有效期</span></span><br><span class="line">            <span class="comment">// 如果解析 token 正常，返回 claims</span></span><br><span class="line">            <span class="keyword">return</span> claims;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">// 如果解析 token 抛出异常，返回 null</span></span><br><span class="line">            log.error( e.getMessage() );</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>yml 配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">management:</span></span><br><span class="line">  <span class="attr">endpoints:</span></span><br><span class="line">    <span class="attr">web:</span></span><br><span class="line">      <span class="comment"># 暴露的信息</span></span><br><span class="line">      <span class="attr">exposure:</span></span><br><span class="line">        <span class="attr">include:</span> <span class="string">&quot;health,info&quot;</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>引入redis（存储token信息）<ul>
-<li>下载windows版redis</li>
-<li>参考spring data redis </li>
-<li>利用redis存登录用户的token</li>
-<li>redis中的数据可设置expiration时间</li>
-</ul>
+
+
+
+
+<h3 id="boot与cloud版本"><a href="#boot与cloud版本" class="headerlink" title="boot与cloud版本"></a>boot与cloud版本</h3><p>boot版本查看：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://spring.io/projects/spring-boot#learn">https://spring.io/projects/spring-boot#learn</a></p>
+</blockquote>
+<p>cloud版本查看：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://spring.io/projects/spring-cloud#overview">https://spring.io/projects/spring-cloud#overview</a></p>
+</blockquote>
+<p>版本对应表：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://start.spring.io/actuator/info">https://start.spring.io/actuator/info</a></p>
+</blockquote>
+<p>alibaba与spring cloud版本对应:</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/alibaba/spring-cloud-alibaba/wiki/">https://github.com/alibaba/spring-cloud-alibaba/wiki/</a></p>
+<p>spring cloud alibaba版本必须依赖spring cloud版本</p>
+</blockquote>
+<p>父项目的pom.xml中做依赖管理和版本仲裁，使用<properties>约定第三方依赖版本号，在子项目中使用<parent>继承父依赖，需要用到的依赖若父项目里有，则直接用<dependency>声明，不写版本号，否则，必须写版本号。</p>
+<p>以小萌神为例</p>
+<p>以下导入的依赖(部分)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-alibaba-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.cloud.alibaba.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 此依赖不会打包到最终的构件中，只影响依赖的解析过程 --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 只与type=pom一起用，表示将此pom文件 中的 dependencyManagement 下的依赖信息导入当前pom --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.cloud.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过spring-cloud-alibaba-dependencies追踪进去可以看到：</p>
+<p><img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231121204944949.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231121204944949.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231121204944949"></p>
 </li>
-<li>自定义请求拦截器，检验请求头中的token信息</li>
-</ul>
-<p>spring security依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</ol>
+<p>​	<img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231121205038483.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231121205038483.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231121205038483"></p>
+<p>这些依赖不会打包到我们的项目中，一个项目只有dependencies中的dependency才会被打包，dependencyManagement不会打包，dependencyManagement的作用是做版本管理，所以约定的类型为pom,而不是jar包。对于spring-cloud-alibaba-dependencies而言，里面只约定了所包含的依赖版本，并不意味着我们的项目要导入这些依赖，即它只是一个pom文件而不是一个jar包。总而言之，导入spring-cloud-alibaba-dependencies依赖就是意味着将该依赖的仲裁信息与我们的项目合并，从而起到增加仲裁信息的作用。</p>
 
   </div>
   
@@ -2660,10 +2747,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-11-17T17:09:04+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-11-25T17:14:40+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 17, 2023</p>
+    <p>更新于：Nov 25, 2023</p>
   </a>
 </div>
 
@@ -2671,6 +2758,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>微服务</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nacos/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>nacos</p></a></div>
+  <span hidden itemprop="keywords">微服务 nacos</span>
+  
+
 
         
       
@@ -2682,7 +2776,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2023/11/19/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/&title= - myblog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2023/11/25/Nacos%E5%AE%8C%E6%88%90%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/&title=Nacos完成服务注册与发现 - myblog&summary="
           
           >
           
@@ -2694,7 +2788,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2023/11/19/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/&title= - myblog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2023/11/25/Nacos%E5%AE%8C%E6%88%90%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/&title=Nacos完成服务注册与发现 - myblog&summary="
           
           >
           
@@ -2706,7 +2800,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2023/11/19/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/&title= - myblog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2023/11/25/Nacos%E5%AE%8C%E6%88%90%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/&title=Nacos完成服务注册与发现 - myblog&summary="
           
           >
           
@@ -2739,15 +2833,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/11/19/promise%20%E5%AF%B9%E8%B1%A1/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Nov 19, 2023</p>
-          <p class='content'>promise 对象
-ES6中Promise() 对象及then() ，catch() , race() 的原理及使用场景：
-
-使用场景：回调函数，定时器，事件绑定， ajax
-解决问题：嵌套调...</p>
-        </a>
       
+        <a class='next' href='/2023/11/25/Nacos%E5%9F%BA%E4%BA%8ESpringCloud/'>
+          <p class='title'>Nacos基于SpringCloud<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Nacos基于Spring Cloud准备工作：
+依赖：
+12345678910111213141516171819&lt;!-- 父项目 --&gt;&lt;dependencyManagem...</p>
+        </a>
       
     </div>
   
@@ -2765,7 +2857,7 @@ ES6中Promise() 对象及then() ，catch() , race() 的原理及使用场景：
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/11/19/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/11/25/Nacos%E5%AE%8C%E6%88%90%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2807,7 +2899,7 @@ ES6中Promise() 对象及then() ，catch() , race() 的原理及使用场景：
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1"><span class="toc-text">分布式文件服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#spring-security"><span class="toc-text">spring security</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">服务注册与发现的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nacos%E5%90%84%E7%A7%8D%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">nacos各种服务的工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Actuator%EF%BC%882-X-%E7%89%88%E6%9C%AC%EF%BC%89"><span class="toc-text">Actuator（2.X 版本）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#boot%E4%B8%8Ecloud%E7%89%88%E6%9C%AC"><span class="toc-text">boot与cloud版本</span></a></li></ol>
   </div>
 </section>
 
@@ -3530,7 +3622,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"myblog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":"test description"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"myblog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2023/11/19/分布式文件服务/"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"myblog","url":"http://yoursite.com/","keywords":null,"description":"test description","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","description":"test description"},"publisher":{"@type":"Organization","name":"myblog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://yoursite.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"test description","inLanguage":["en","zh-CN","ja","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2023/11/19/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"myblog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2023/11/19/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1/","wordCount":0,"datePublished":"2023-11-19T15:52:43.140Z","dateModified":"2023-11-17T09:09:04.614Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"myblog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":"test description"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"myblog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/学习笔记/知识点总结/","name":"知识点总结"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2023/11/25/Nacos完成服务注册与发现/","name":"Nacos完成服务注册与发现"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"myblog","url":"http://yoursite.com/","keywords":null,"description":"test description","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","description":"test description"},"publisher":{"@type":"Organization","name":"myblog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://yoursite.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Nacos完成服务注册与发现","description":"test description","inLanguage":["en","zh-CN","ja","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2023/11/25/Nacos%E5%AE%8C%E6%88%90%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"myblog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2023/11/25/Nacos%E5%AE%8C%E6%88%90%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%8F%91%E7%8E%B0/","wordCount":0,"datePublished":"2023-11-25T09:06:09.000Z","dateModified":"2023-11-25T09:14:40.580Z","articleSection":"学习笔记","keywords":"微服务,nacos","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
