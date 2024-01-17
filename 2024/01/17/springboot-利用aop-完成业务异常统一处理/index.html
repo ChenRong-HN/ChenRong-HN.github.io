@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://yoursite.com/2023/11/25/负载均衡/"/>
+  <link rel="canonical" href="http://yoursite.com/2024/01/17/springboot-利用aop-完成业务异常统一处理/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -35,21 +35,23 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>负载均衡 - myblog</title>
-  <meta name="keywords" content="负载均衡,null">
+  <title>springboot 利用aop 完成业务异常统一处理 - myblog</title>
+  <meta name="keywords" content="异常处理,异常捕获,SpringBoot,null">
   <meta desc name="description" content="test description - John Doe - myblog">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="负载均衡">
-<meta property="og:url" content="http://yoursite.com/2023/11/25/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/index.html">
+<meta property="og:title" content="springboot 利用aop 完成业务异常统一处理">
+<meta property="og:url" content="http://yoursite.com/2024/01/17/springboot-%E5%88%A9%E7%94%A8aop-%E5%AE%8C%E6%88%90%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="myblog">
-<meta property="og:description" content="负载均衡什么是负载均衡负载平衡（Load balancing）是一种计算机技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。 使用带有负载平衡的多个服务器组件，取代单一的组件，可以通过冗余提高可靠性。负载平衡服务通常是由专用软件和硬件来完成。 主要作用是将大量作业合理地分摊到多个操作单元上">
+<meta property="og:description" content="springboot 利用aop 完成业务异常统一处理 问题描述： 如果资源的业务处理出现异常，sentinel默认的解决方案是回送一条http  500 的信息，不友好  解决方案： 123456    @RequestMapping(value &#x3D; &quot;&#x2F;findByPage&quot;,method &#x3D; &amp;#123;RequestMethod.GET,RequestMethod.PO">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-11-25T09:04:53.000Z">
-<meta property="article:modified_time" content="2023-11-25T09:09:29.056Z">
+<meta property="article:published_time" content="2024-01-17T07:55:20.000Z">
+<meta property="article:modified_time" content="2024-01-17T08:03:27.274Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="负载均衡">
+<meta property="article:tag" content="异常处理">
+<meta property="article:tag" content="异常捕获">
+<meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2522,7 +2524,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/11/25/负载均衡/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2024/01/17/springboot-利用aop-完成业务异常统一处理/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="myblog">
   </span>
@@ -2543,7 +2545,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        负载均衡
+        springboot 利用aop 完成业务异常统一处理
       </h1>
       <div class='new-meta-box'>
         
@@ -2565,10 +2567,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">知识点总结</a>
+    <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" itemprop="url"><span itemprop="name">知识点总结</span></a>
+        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url"><span itemprop="name">学习笔记</span></a>
       </span>
     
   </div>
@@ -2579,10 +2581,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-11-25T17:04:53+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-01-17T15:55:20+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Nov 25, 2023</p>
+    <p>发布于：Jan 17, 2024</p>
   </a>
 </div>
 
@@ -2605,12 +2607,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><h5 id="什么是负载均衡"><a href="#什么是负载均衡" class="headerlink" title="什么是负载均衡"></a>什么是负载均衡</h5><p>负载平衡（Load balancing）是一种计算机技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。 使用带有负载平衡的多个服务器组件，取代单一的组件，可以通过冗余提高可靠性。负载平衡服务通常是由专用软件和硬件来完成。 主要作用是将大量作业合理地分摊到多个操作单元上进行执行，用于解决互联网架构中的高并发和高可用的问题。</p>
-<p>举个例子来解释下负载均衡</p>
-<p>假设，一群人在食堂排队打饭，并且只有一个窗口一个阿姨为我们打饭，人少的时候，还是可以正常完成打饭这一业务的，如果人非常多呢？一个窗口肯定是没有办法处理完这么多业务的。这就会带来一种情况，都不来食堂吃饭了，都点外卖去了。食堂肯定是不会允许这种情况发生的，这时候食堂就会想到多开几个窗口，多请几个阿姨，将原本堆积在一个窗口的业务，分配到几个窗口上，这样大家排队的时间就会大大缩短了。但是，仅仅是这样还是不够的，还是没办法保证哪个人到哪个窗口。举个例子：假设1号窗口的阿姨打饭从来不手抖，量还特别多。这样的话，大部分人不就都想着去1号窗口了吗？</p>
-<p>因此，食堂除了多开窗口和多请几个阿姨之外，还得规定好手机点了单之后谁该去哪个窗口取饭。</p>
-<p>在负载均衡中，客户端（PC&#x2F;移动&#x2F;第三方）发送请求，就好比点餐的同学们，负载均衡器就好像手机上的点餐系统，接收到一个请求时，</p>
-<p>负载均衡器就会给这个请求分配一个处理请求（取餐号），哪个窗口的阿姨叫到哪个号码，哪个人就去取。</p>
+    <h3 id="springboot-利用aop-完成业务异常统一处理"><a href="#springboot-利用aop-完成业务异常统一处理" class="headerlink" title="springboot 利用aop 完成业务异常统一处理"></a>springboot 利用aop 完成业务异常统一处理</h3><blockquote>
+<p>问题描述： 如果资源的业务处理出现异常，sentinel默认的解决方案是回送一条http  500 的信息，不友好</p>
+</blockquote>
+<p>解决方案：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    <span class="meta">@RequestMapping(value = &quot;/findByPage&quot;,method = &#123;RequestMethod.GET,RequestMethod.POST&#125;)</span></span><br><span class="line"><span class="comment">//    @SentinelResource(&quot;findByPage&quot;) // 流控资源名  热点规则需要该注解配置资源名</span></span><br><span class="line">    </span><br><span class="line">    <span class="meta">@SentinelResource(value = &quot;findByPage&quot;,blockHandler = &quot;handleBlock&quot;, fallback = &quot;handleException&quot;)</span> <span class="comment">// 流控资源名  热点规则需要该注解配置资源名</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title function_">findByPage</span><span class="params">(<span class="meta">@RequestParam</span> <span class="type">int</span> pageno,<span class="meta">@RequestParam</span> <span class="type">int</span> pagesize,</span></span><br><span class="line"><span class="params">                                         <span class="meta">@RequestParam(required = false)</span> String sortby,<span class="meta">@RequestParam(required = false)</span> String sort)</span></span><br></pre></td></tr></table></figure>
+
+<p>@blockHandler 服务熔断时执行的代码逻辑（流控异常）</p>
+<p>@fallback 服务降级时执行的代码逻辑（业务异常）   </p>
+<p>当资源发生异常时，统一回调一个处理方法，重组异常信息</p>
+<blockquote>
+<p>缺点：代码冗余，每个方法都要写相应的处理方法</p>
+<p>引出了新问题：如果对每个资源单独指定流控回调和异常回调，则代码不友好</p>
+</blockquote>
+<p>解决方案：</p>
+<ol>
+<li>对controller中出现的异常统一处理，利用springboot的全局异常处理机制集中式处理异常</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ControllerAdvice</span>    <span class="comment">//  Controller控制器,ioc,     Advice: aop中的增强</span></span><br><span class="line"><span class="meta">@Order(-100000)</span>    <span class="comment">//</span></span><br><span class="line"><span class="comment">//   AOP技术</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CustomerExceptionHandler</span> &#123;</span><br><span class="line">    <span class="meta">@ExceptionHandler(RuntimeException.class)</span></span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title function_">handleRuntimeException</span><span class="params">(RuntimeException exception)</span>&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">&quot;code&quot;</span>,<span class="number">0</span>);</span><br><span class="line">        map.put(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;runtimeException occured&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	 AOP机制：Advice增强</p>
+<p>​	@Order(-100000) ：aop顺序，值越小在越外面</p>
+<p>​	@ControllerAdvice: 开启异常捕获</p>
+<p>​	@ExceptionHandler(RuntimeException.class)指定捕获的异常类型（例如，dao层的异常会抛到service层上，然后service层就会捕获该异常，做事务回滚，而事务回滚就是针对RuntimeException，接着抛到controller，controller也不会处理，继续往外抛，最终在这个类被拦截，统一处理）</p>
+<p>​	@ResponseBody 返回json</p>
+<ol start="2">
+<li><p>对sentinel的流控异常进行统一处理，并不进入到controller中，直接在sentinel中抛出。利用springMVC的全局异常处理机制集中式处理异常</p>
+<ol>
+<li><p>增强适配器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--将sentinel的BlockException 抛出 到外面统一由  MySentinelExceptionHandler处理  --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.csp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sentinel-spring-webmvc-adapter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--单独对 ParamFlowException处理 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.csp<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>sentinel-parameter-flow-control<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增一个类完成对sentinel异常的集中处理</p>
+<blockquote>
+<p>注意：之前必须要加上上面的依赖，否则不能对<code>ParamFlowException</code>进行处理</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MySentinelExceptionHandler</span> <span class="keyword">implements</span> <span class="title class_">BlockExceptionHandler</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, BlockException ex)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (ex <span class="keyword">instanceof</span> FlowException) &#123;</span><br><span class="line">            msg = <span class="string">&quot;访问频繁，请稍候再试&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ex <span class="keyword">instanceof</span> DegradeException) &#123;</span><br><span class="line">            msg = <span class="string">&quot;系统降级&quot;</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>( ex <span class="keyword">instanceof</span> ParamFlowException)&#123;</span><br><span class="line">            msg=<span class="string">&quot;热点参数异常:&quot;</span>+   ex.getMessage()+<span class="string">&quot;,&quot;</span>+((ParamFlowException) ex).getResourceName()+<span class="string">&quot;,&quot;</span>+ex.getRule() ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (ex <span class="keyword">instanceof</span> SystemBlockException) &#123;</span><br><span class="line">            msg = <span class="string">&quot;系统规则限流或降级&quot;</span>;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ex <span class="keyword">instanceof</span> AuthorityException) &#123;</span><br><span class="line">            msg = <span class="string">&quot;授权规则不通过&quot;</span>;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            msg = <span class="string">&quot;未知限流降级&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// http状态码</span></span><br><span class="line">        response.setStatus(<span class="number">200</span>);</span><br><span class="line">        response.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        response.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json;charset=utf-8&quot;</span>);</span><br><span class="line">        response.setContentType(<span class="string">&quot;application/json;charset=utf-8&quot;</span>);</span><br><span class="line">        Map map=<span class="keyword">new</span> <span class="title class_">HashMap</span>();</span><br><span class="line">        map.put(<span class="string">&quot;code&quot;</span>,<span class="number">0</span>);</span><br><span class="line">        map. put(<span class="string">&quot;msg&quot;</span>, msg);</span><br><span class="line"></span><br><span class="line">        ObjectMapper om=<span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">        String json=om.writeValueAsString(   map );</span><br><span class="line">        PrintWriter writer=response.getWriter();</span><br><span class="line">        writer.write(   json  );</span><br><span class="line">        writer.flush();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<p>新增一个流控规则</p>
+<img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213184517547.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213184517547.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231213184517547" style="zoom:80%;" /></li>
+</ol>
+</li>
+</ol>
+<p>​				<img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213162138435.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213162138435.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231213162138435" style="zoom:80%;" /> </p>
+<p>​				<img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213184643103.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213184643103.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231213184643103" style="zoom:80%;" />                                      </p>
+<p>​				可以看到，第五个请求能接收到正常数据，第六个就会接收到异常信息，并且此时的状态码都为200。</p>
+<p>​				@SentinelResource(“findByPage”)使用该注解设置热点流控资源名</p>
+<p>​				新增一个热点流控规则：</p>
+<p>​				<img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213185013774.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213185013774.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231213185013774" style="zoom:80%;" /></p>
+<p>​				<img src="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213185122544.png" class="lazyload" data-srcset="C:\Users\28894\AppData\Roaming\Typora\typora-user-images\image-20231213185122544.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231213185122544" style="zoom:80%;" /></p>
 
   </div>
   
@@ -2635,10 +2680,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-11-25T17:09:29+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-01-17T16:03:27+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 25, 2023</p>
+    <p>更新于：Jan 17, 2024</p>
   </a>
 </div>
 
@@ -2649,8 +2694,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>负载均衡</p></a></div>
-  <span hidden itemprop="keywords">负载均衡</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>异常处理</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>异常捕获</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/SpringBoot/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>SpringBoot</p></a></div>
+  <span hidden itemprop="keywords">异常处理 异常捕获 SpringBoot</span>
   
 
 
@@ -2664,7 +2709,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2023/11/25/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/&title=负载均衡 - myblog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2024/01/17/springboot-%E5%88%A9%E7%94%A8aop-%E5%AE%8C%E6%88%90%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/&title=springboot 利用aop 完成业务异常统一处理 - myblog&summary="
           
           >
           
@@ -2676,7 +2721,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2023/11/25/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/&title=负载均衡 - myblog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2024/01/17/springboot-%E5%88%A9%E7%94%A8aop-%E5%AE%8C%E6%88%90%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/&title=springboot 利用aop 完成业务异常统一处理 - myblog&summary="
           
           >
           
@@ -2688,7 +2733,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2023/11/25/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/&title=负载均衡 - myblog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2024/01/17/springboot-%E5%88%A9%E7%94%A8aop-%E5%AE%8C%E6%88%90%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/&title=springboot 利用aop 完成业务异常统一处理 - myblog&summary="
           
           >
           
@@ -2721,28 +2766,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/11/25/Nacos%E5%9F%BA%E4%BA%8ESpringCloud/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Nacos基于SpringCloud</p>
-          <p class='content'>Nacos基于Spring Cloud准备工作：
-依赖：
-12345678910111213141516171819&lt;!-- 父项目 --&gt;&lt;dependencyManagem...</p>
+        <a class='prev' href='/2024/01/17/SPI%E6%9C%BA%E5%88%B6/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>SPI机制</p>
+          <p class='content'>SPI 机制一、SPI机制是什么？SPI (Service Provider Interface)是JDK内置的一种服务提供发现机制，可以用来启用框架扩展和替换组件，主要是被框架的开发人员使用，...</p>
         </a>
       
       
-        <a class='next' href='/2023/11/20/git-%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E6%AD%A5%E9%AA%A4%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/'>
-          <p class='title'>git 项目上传步骤及常见问题<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>git 项目上传步骤及常见问题
-创建仓库
-
-初始化
-
-在命令行中执行 git inti 命令，生成&#x3D;&#x3D;.git&#x3D;&#x3D;文件
-
-
-添加项目
-
-
-运行命令 git...</p>
+        <a class='next' href='/2024/01/17/%E5%85%A8%E5%B1%80%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7%E5%92%8C%E5%A4%84%E7%90%86/'>
+          <p class='title'>全局统一异常捕获和处理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>全局统一异常捕获和处理日常开发过程中，难免有的程序会因为某些原因抛出异常，而这些异常一般都是利用try，catch的方式处理异常或者throw，throws的方式抛出异常不管。这种方法对于程序员...</p>
         </a>
       
     </div>
@@ -2761,7 +2793,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/11/25/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/01/17/springboot-%E5%88%A9%E7%94%A8aop-%E5%AE%8C%E6%88%90%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2803,7 +2835,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-text">负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-text">什么是负载均衡</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#springboot-%E5%88%A9%E7%94%A8aop-%E5%AE%8C%E6%88%90%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86"><span class="toc-text">springboot 利用aop 完成业务异常统一处理</span></a></li></ol>
   </div>
 </section>
 
@@ -3526,7 +3558,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"myblog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":"test description"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"myblog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/知识点总结/","name":"知识点总结"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2023/11/25/负载均衡/","name":"负载均衡"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"myblog","url":"http://yoursite.com/","keywords":null,"description":"test description","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","description":"test description"},"publisher":{"@type":"Organization","name":"myblog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://yoursite.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"负载均衡","description":"test description","inLanguage":["en","zh-CN","ja","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2023/11/25/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"myblog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2023/11/25/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/","wordCount":0,"datePublished":"2023-11-25T09:04:53.000Z","dateModified":"2023-11-25T09:09:29.056Z","articleSection":"知识点总结","keywords":"负载均衡","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"myblog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","sameAs":["https://github.com/volantis-x"],"description":"test description"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://yoursite.com/","name":"myblog"}},{"@type":"ListItem","position":2,"item":{"@id":"http://yoursite.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://yoursite.com/2024/01/17/springboot-利用aop-完成业务异常统一处理/","name":"springboot 利用aop 完成业务异常统一处理"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"myblog","url":"http://yoursite.com/","keywords":null,"description":"test description","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/","description":"test description"},"publisher":{"@type":"Organization","name":"myblog","url":"http://yoursite.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://yoursite.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"springboot 利用aop 完成业务异常统一处理","description":"test description","inLanguage":["en","zh-CN","ja","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://yoursite.com/2024/01/17/springboot-%E5%88%A9%E7%94%A8aop-%E5%AE%8C%E6%88%90%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://yoursite.com/"},"publisher":{"@type":"Organization","name":"myblog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://yoursite.com/2024/01/17/springboot-%E5%88%A9%E7%94%A8aop-%E5%AE%8C%E6%88%90%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86/","wordCount":0,"datePublished":"2024-01-17T07:55:20.000Z","dateModified":"2024-01-17T08:03:27.274Z","articleSection":"学习笔记","keywords":"异常处理,异常捕获,SpringBoot","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
